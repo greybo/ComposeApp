@@ -1,4 +1,4 @@
-package com.example.composeapp1.ui.example1
+package com.example.composeapp.ui.example1
 
 //
 //

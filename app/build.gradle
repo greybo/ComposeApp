@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.composeapp1'
+    namespace 'com.example.composeapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.composeapp1"
+        applicationId "com.example.composeapp"
         minSdk 26
         targetSdk 32
         versionCode 1

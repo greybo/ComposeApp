@@ -1,4 +1,4 @@
-package com.example.composeapp1.ui.example2
+package com.example.composeapp.ui.example2
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.composeapp1.ui.theme.ComposeApp1Theme
+import com.example.composeapp.ui.theme.ComposeApp1Theme
 
 
 class MainActivity2 : ComponentActivity() {
