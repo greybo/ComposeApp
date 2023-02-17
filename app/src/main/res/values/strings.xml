@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">ComposeApp</string>
+    <string name="skip">skip</string>
+    <string name="submit">submit</string>
+    <string name="instructions">instructions</string>
+    <string name="enter_your_word">enter_your_word</string>
+    <string name="word_count">word_count</string>
+    <string name="score">score</string>
+    <string name="congratulations">congratulations</string>
+    <string name="you_scored">you_scored</string>
+    <string name="exit">exit</string>
+    <string name="play_again">play_again</string>
+    <string name="wrong_guess">wrong_guess</string>
 </resources>
