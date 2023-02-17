@@ -11,7 +11,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composeapp.ui.theme.ComposeApp1Theme
+import com.example.composeapp.ui.theme.ComposeAppTheme
 
 @Composable
 fun Greeting(addViewModel: CountAddViewModel = viewModel()) {
@@ -44,7 +44,7 @@ fun Greeting(addViewModel: CountAddViewModel = viewModel()) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview2() {
-    ComposeApp1Theme {
+    ComposeAppTheme {
         Greeting()
     }
 }

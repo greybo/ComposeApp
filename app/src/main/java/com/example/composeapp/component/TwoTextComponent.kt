@@ -7,7 +7,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.example.composeapp.ui.theme.ComposeApp1Theme
+import com.example.composeapp.ui.theme.ComposeAppTheme
 
 @Composable
 fun twoText(name: String) {
@@ -38,7 +38,7 @@ fun twoText(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
-    ComposeApp1Theme {
+    ComposeAppTheme {
         twoText("Android")
     }
 }

@@ -36,7 +36,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.composeapp.R
-import com.example.composeapp.ui.theme.ComposeApp1Theme
+import com.example.composeapp.ui.theme.ComposeAppTheme
 
 @Composable
 fun GameScreen(
@@ -202,7 +202,7 @@ private fun FinalScoreDialog(
 @Preview(showBackground = true)
 @Composable
 fun GameScreenPreview() {
-    ComposeApp1Theme {
+    ComposeAppTheme {
         GameScreen()
     }
 }
