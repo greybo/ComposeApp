@@ -11,21 +11,17 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.BlendMode
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import com.example.composeapp.R
 
 
 @Composable
 fun MessageCard(
-    msg: Message = getFakeMessage(),
-    index: Int = 0,
+    msg: Message,
+    index: Int,
     callback: ((Message, Int) -> Unit)? = null
 ) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
@@ -72,40 +68,9 @@ fun MessageCard(
     }
 }
 
-@Composable
-fun MessageCard(viewModel: MessageViewModel = viewModel()) {
-
-    val state by viewModel.uiState.collectAsState()
-
-    Row {
-        Image(
-            painter = painterResource(id = R.drawable.profile_picture),
-            contentDescription = "Contact profile picture",
-            modifier = Modifier
-                .padding(8.dp, 8.dp, 0.dp, 0.dp)
-                .clickable {
-                    viewModel.changeData()
-                },
-            colorFilter = ColorFilter.tint(color = Color.Red, BlendMode.ColorBurn)
-        )
-        Column {
-            Text(
-                text = state.author,
-                modifier = Modifier.padding(8.dp),
-                fontSize = 24.sp,
-                color = Color.Black
-            )
-            Text(
-                text = state.body,
-                modifier = Modifier.padding(8.dp)
-            )
-        }
-    }
-}
-
 @Preview
 @Composable
 fun PreviewMessageCard() {
-    MessageCard()
+    MessageCard(getFakeMessage(), 0)
 }
 

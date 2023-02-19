@@ -18,8 +18,8 @@ import com.example.composeapp.ui.component.tutorial.example1.MessageCard
 import com.example.composeapp.ui.component.tutorial.example1.MessageViewModel
 
 @Composable
-fun TutorialGreeting(viewModel: MessageViewModel = viewModel()) {
-    val itemsList by viewModel.uiState.collectAsState()
+fun Tutorial1Greeting(viewModel: MessageViewModel = viewModel()) {
+    val itemsList by viewModel.uiStateList.collectAsState()
     Column {
         itemsList.getOrNull(3)?.let {
             MessageCard(it, 3)
@@ -27,7 +27,7 @@ fun TutorialGreeting(viewModel: MessageViewModel = viewModel()) {
 
         Text(text = "----------------------------------")
         ListHandle(itemsList) { item, index ->
-            viewModel.changeData(item, index)
+            viewModel.changeDataList(item, index)
         }
     }
 }
@@ -50,6 +50,6 @@ fun ListHandle(itemsList: List<Message>, function: (Message, Int) -> Unit) {
 
 @Preview()
 @Composable
-fun PreviewTutorialGreeting() {
-    TutorialGreeting()
+fun PreviewTutorial1Greeting() {
+    Tutorial1Greeting()
 }
