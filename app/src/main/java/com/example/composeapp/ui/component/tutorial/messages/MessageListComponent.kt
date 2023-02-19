@@ -19,7 +19,7 @@ fun ListGreeting(viewModel: MessageViewModel = viewModel()) {
     val stateList by viewModel.uiStateList.collectAsState()
 
     Column {
-        ListHandle(stateList.value) { index ->
+        ListHandle(stateList) { index ->
              viewModel.changeDataList(index)
         }
     }
