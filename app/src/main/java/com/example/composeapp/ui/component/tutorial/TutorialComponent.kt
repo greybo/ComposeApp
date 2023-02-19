@@ -1,9 +1,11 @@
 package com.example.composeapp.ui.component.tutorial
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material3.Divider
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -18,14 +20,20 @@ import com.example.composeapp.ui.component.tutorial.example1.MessageViewModel
 @Composable
 fun TutorialGreeting(viewModel: MessageViewModel = viewModel()) {
     val itemsList by viewModel.uiState.collectAsState()
+    Column {
+        itemsList.getOrNull(3)?.let {
+            MessageCard(it, 3)
+        }
 
-    ListHandle(itemsList) {
-        viewModel.changeData(it)
+        Text(text = "----------------------------------")
+        ListHandle(itemsList) { item, index ->
+            viewModel.changeData(item, index)
+        }
     }
 }
 
 @Composable
-fun ListHandle(itemsList: List<Message>, function: (Message) -> Unit) {
+fun ListHandle(itemsList: List<Message>, function: (Message, Int) -> Unit) {
 
     LazyColumn(
         verticalArrangement = Arrangement.spacedBy(12.dp),
