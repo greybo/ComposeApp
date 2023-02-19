@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.component.tutorial.example1
+package com.example.composeapp.ui.component.tutorial.messages
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -40,8 +40,9 @@ class MessageViewModel : ViewModel() {
         }
     }
 
-    fun changeDataList(model: Message, index: Int) {
+    fun changeDataList(index: Int) {
         _uiStateList.getAndUpdate { list ->
+            val model = list.get(index)
             val changed = if (model.author == "author") model.copy(author = "Colleague")
             else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
             else model.copy(author = "author", body = "body")

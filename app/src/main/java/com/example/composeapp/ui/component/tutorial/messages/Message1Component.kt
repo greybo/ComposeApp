@@ -18,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.composeapp.R
-import com.example.composeapp.ui.component.tutorial.example1.MessageViewModel
+import com.example.composeapp.ui.component.tutorial.messages.MessageViewModel
 
 
 @Composable
@@ -64,7 +64,7 @@ fun MessageCardSingle(author: String, body: String, callback: () -> Unit) {
 
 @Preview
 @Composable
-fun PreviewTutorialGreeting() {
+fun PreviewMessageSingle() {
     MessageSingle()
 }
 

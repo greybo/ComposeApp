@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.component.tutorial.example1
+package com.example.composeapp.ui.component.tutorial.messages
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -22,7 +22,7 @@ import com.example.composeapp.R
 fun MessageCard(
     msg: Message,
     index: Int,
-    callback: ((Message, Int) -> Unit)? = null
+    callback: ((Int) -> Unit)? = null
 ) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
@@ -33,7 +33,7 @@ fun MessageCard(
                 .size(40.dp)
                 .clip(CircleShape)
                 .border(1.5.dp, MaterialTheme.colorScheme.secondaryContainer, CircleShape)
-                .clickable { callback?.invoke(msg, index) }
+                .clickable { callback?.invoke(index) }
         )
         Spacer(modifier = Modifier.width(8.dp))
 
