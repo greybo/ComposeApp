@@ -48,7 +48,7 @@ class MessageViewModel : ViewModel() {
     fun changeData() {
         _uiState.getAndUpdate { model ->
             if (model.author == "author") model.copy(author = "Colleague")
-            else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
+            else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great! Hey, take a look at Jetpack Compose, it's great!")
             else model.copy(author = "author", body = "body")
         }
     }
