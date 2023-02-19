@@ -12,7 +12,7 @@ data class Message(val author: String, val body: String)
 
 class MessageViewModel : ViewModel() {
 
-    val itemsList = mutableListOf<Message>(
+    val itemsList = mutableListOf(
         Message(
             "author",
             "Hey, take a look at Jetpack Compose, it's great! Hey, take a look at Jetpack Compose, it's great!"
@@ -42,8 +42,6 @@ class MessageViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(getFakeMessage())
     val uiState: StateFlow<Message> = _uiState.asStateFlow()
 
-    private val _uiStateList2 = MutableStateFlow(mutableStateOf(itemsList.toList()))
-    val uiStateList2: StateFlow<MutableState<List<Message>>> = _uiStateList2.asStateFlow()
     private val _uiStateList = MutableStateFlow(mutableStateOf(itemsList.toList()))
     val uiStateList: StateFlow<MutableState<List<Message>>> = _uiStateList.asStateFlow()
 
@@ -68,18 +66,6 @@ class MessageViewModel : ViewModel() {
         }
     }
 
-    fun changeDataList2(index: Int = -1): List<Message> {
-        val list = itemsList.mapIndexed { _index, _model ->
-            if (index == _index) {
-                if (_model.author == "author") _model.copy(author = "Colleague")
-                else if (_model.body == "body") _model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
-                else _model.copy(author = "author", body = "body")
-            } else _model
-        }
-        itemsList.clear()
-        itemsList.addAll(list)
-        return list
-    }
 }
 
 fun getFakeMessage() = Message("Colleague", "Hey, take a look at Jetpack Compose, it's great!")
