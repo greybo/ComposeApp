@@ -22,7 +22,7 @@ import com.example.composeapp.R
 fun MessageCard(
     msg: Message = getFakeMessage(),
     index: Int = 0,
-    callback: ((Message, Int) -> Unit)? = null
+    callback: ((Message) -> Unit)? = null
 ) {
     Row(modifier = Modifier.padding(all = 8.dp)) {
         Image(
@@ -33,6 +33,7 @@ fun MessageCard(
                 .size(40.dp)
                 .clip(CircleShape)
                 .border(1.5.dp, MaterialTheme.colorScheme.secondaryContainer, CircleShape)
+                .clickable { callback?.invoke(msg)}
         )
         Spacer(modifier = Modifier.width(8.dp))
 

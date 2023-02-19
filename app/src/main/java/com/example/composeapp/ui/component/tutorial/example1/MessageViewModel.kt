@@ -24,12 +24,12 @@ class MessageViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(itemsList)
     val uiState: StateFlow<List<Message>> = _uiState.asStateFlow()
 
-    fun changeData(model: Message, index: Int) {
-
-        val changed = if (model.author == "author") model.copy(author = "Colleague")
-        else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
-        else model.copy(author = "author", body = "body")
+    fun changeData(model: Message) {
         _uiState.getAndUpdate {
+            val index: Int = it.indexOf(model)
+            val changed = if (model.author == "author") model.copy(author = "Colleague")
+            else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
+            else model.copy(author = "author", body = "body")
             it[index] = changed
             it
         }
