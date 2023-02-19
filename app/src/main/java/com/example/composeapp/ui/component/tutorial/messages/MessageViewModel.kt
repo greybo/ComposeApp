@@ -1,5 +1,7 @@
 package com.example.composeapp.ui.component.tutorial.messages
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,7 +12,7 @@ data class Message(val author: String, val body: String)
 
 class MessageViewModel : ViewModel() {
 
-    val itemsList = arrayListOf<Message>(
+    val itemsList = mutableListOf<Message>(
         Message(
             "author",
             "Hey, take a look at Jetpack Compose, it's great! Hey, take a look at Jetpack Compose, it's great!"
@@ -24,13 +26,24 @@ class MessageViewModel : ViewModel() {
         Message("author", "body"),
         Message("author", "body"),
         Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
+        Message("author", "body"),
     )
 
     private val _uiState = MutableStateFlow(getFakeMessage())
     val uiState: StateFlow<Message> = _uiState.asStateFlow()
 
-    private val _uiStateList = MutableStateFlow(itemsList)
-    val uiStateList: StateFlow<List<Message>> = _uiStateList.asStateFlow()
+    private val _uiStateList = MutableStateFlow(mutableStateOf(itemsList.toList()))
+    val uiStateList: StateFlow<MutableState<List<Message>>> = _uiStateList.asStateFlow()
 
     fun changeData() {
         _uiState.getAndUpdate { model ->
@@ -41,14 +54,29 @@ class MessageViewModel : ViewModel() {
     }
 
     fun changeDataList(index: Int) {
-        _uiStateList.getAndUpdate { list ->
+        _uiStateList.getAndUpdate { state ->
+            val list = state.value.toMutableList()
             val model = list.get(index)
             val changed = if (model.author == "author") model.copy(author = "Colleague")
             else if (model.body == "body") model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
             else model.copy(author = "author", body = "body")
             list[index] = changed
-            list
+            state.value = list
+            state
         }
+    }
+
+    fun changeDataList2(index: Int = -1): List<Message> {
+        val list = itemsList.mapIndexed { _index, _model ->
+            if (index == _index) {
+                if (_model.author == "author") _model.copy(author = "Colleague")
+                else if (_model.body == "body") _model.copy(body = "Hey, take a look at Jetpack Compose, it's great!")
+                else _model.copy(author = "author", body = "body")
+            } else _model
+        }
+        itemsList.clear()
+        itemsList.addAll(list)
+        return list
     }
 }
 
