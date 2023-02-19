@@ -35,11 +35,9 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String) {
     Column {
         ToolbarApp("Test")
-//        Text(text = "Hello $name!")
-//        Text(text = "Some other text")
         TutorialGreeting()
-    }
 //    GameScreen()
+    }
 }
 
 @Preview(showBackground = true)
