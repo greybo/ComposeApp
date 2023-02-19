@@ -42,6 +42,8 @@ class MessageViewModel : ViewModel() {
     private val _uiState = MutableStateFlow(getFakeMessage())
     val uiState: StateFlow<Message> = _uiState.asStateFlow()
 
+    private val _uiStateList2 = MutableStateFlow(mutableStateOf(itemsList.toList()))
+    val uiStateList2: StateFlow<MutableState<List<Message>>> = _uiStateList2.asStateFlow()
     private val _uiStateList = MutableStateFlow(mutableStateOf(itemsList.toList()))
     val uiStateList: StateFlow<MutableState<List<Message>>> = _uiStateList.asStateFlow()
 

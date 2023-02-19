@@ -15,10 +15,19 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @Composable
 fun ListGreeting(viewModel: MessageViewModel = viewModel()) {
     val stateList by viewModel.uiStateList.collectAsState()
+
+    Column {
+        ListHandle(stateList.value) { index ->
+             viewModel.changeDataList(index)
+        }
+    }
+}
+
+@Composable
+fun ListGreeting2(viewModel: MessageViewModel = viewModel()) {
     val itemsList = remember { mutableStateOf(viewModel.itemsList.toList()) }
 
     Column {
-
         ListHandle(itemsList.value) { index ->
             itemsList.value = viewModel.changeDataList2(index)
         }
