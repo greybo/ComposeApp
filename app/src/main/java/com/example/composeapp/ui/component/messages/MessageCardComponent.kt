@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.component.tutorial.messages
+package com.example.composeapp.ui.component.messages
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border

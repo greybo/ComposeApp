@@ -5,8 +5,8 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.composeapp.ui.component.tutorial.messages.MessageCard
-import com.example.composeapp.ui.component.tutorial.messages.MessageViewModel
+import com.example.composeapp.ui.component.messages.MessageCard
+import com.example.composeapp.ui.component.messages.MessageViewModel
 
 
 @Composable

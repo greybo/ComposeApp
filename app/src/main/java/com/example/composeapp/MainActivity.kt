@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeapp.ui.component.ToolbarApp
-import com.example.composeapp.ui.component.tutorial.messages.ListGreeting
+import com.example.composeapp.ui.component.tutorial.ScrollCounter
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -32,14 +32,15 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
+fun Greeting() {
     Column {
         ToolbarApp("Test")
 //        Tutorial1Greeting()
 //        MessageSingle()
 //        MyScreenContent()
 //        GameScreen()
-        ListGreeting()
+//        ListGreeting()
+        ScrollCounter()
     }
 }
 
@@ -47,6 +48,6 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     ComposeAppTheme {
-        Greeting("Android")
+        Greeting()
     }
 }

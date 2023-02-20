@@ -1,6 +1,6 @@
 package com.example.composeapp.ui.component.tutorial
 
-import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.material3.Button
@@ -16,12 +16,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun MyScreenContent(/*names: List<String> = listOf("Android", "there")*/) {
+fun ScrollCounter() {
 
     val counterState = remember { mutableStateOf(0) }
     val namesList = remember { mutableStateOf(listOf("Android", "there")) }
-
-    Column(modifier = Modifier.fillMaxHeight()) {
+    val scrollState = rememberScrollState()
+    Column(
+        modifier = Modifier
+            .fillMaxHeight()
+            .verticalScroll(scrollState)
+    ) {
         Column(/*modifier = Modifier.weight(1f)*/) {
             for (name in namesList.value) {
                 Text(text = name)
@@ -61,5 +65,5 @@ fun Counter(count: Int, updateCount: (Int) -> Unit) {
 @Preview()
 @Composable
 fun PreviewMyScreenContent() {
-    MyScreenContent()
+    ScrollCounter()
 }
