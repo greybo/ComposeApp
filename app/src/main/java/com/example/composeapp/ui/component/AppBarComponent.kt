@@ -19,7 +19,9 @@ fun ToolbarApp(title: String) {
             Text(title, fontSize = 22.sp)
         },
         navigationIcon = {
-            IconButton(onClick = { }) { Icon(Icons.Filled.Menu, contentDescription = "Меню") }
+            IconButton(onClick = {
+
+            }) { Icon(Icons.Filled.Menu, contentDescription = "Меню") }
         },
         actions = {
             Spacer(Modifier)
