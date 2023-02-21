@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.examples.messages
+package com.example.composeapp.examples.messages
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.*

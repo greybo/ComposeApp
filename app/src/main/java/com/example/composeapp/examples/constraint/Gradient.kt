@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.composeapp.components
+package com.example.composeapp.examples.constraint
 
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.background

@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.examples.counter
+package com.example.composeapp.examples.counter
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.examples.tutorial
+package com.example.composeapp.examples.constraint
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -18,10 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.composeapp.R
-import com.example.composeapp.ui.examples.constraint.AppDivider
-import com.example.composeapp.ui.examples.constraint.Filter
-import com.example.composeapp.ui.examples.constraint.FilterBar
-import com.example.composeapp.ui.examples.constraint.Snack
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 

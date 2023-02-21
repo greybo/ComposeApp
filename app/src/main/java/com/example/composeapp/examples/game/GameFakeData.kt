@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.composeapp.ui.examples.game
+package com.example.composeapp.examples.game
 
 const val MAX_NO_OF_WORDS = 10
 const val SCORE_INCREASE = 20

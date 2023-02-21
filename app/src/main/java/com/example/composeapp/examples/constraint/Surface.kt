@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.composeapp.ui.examples.constraint
+package com.example.composeapp.examples.constraint
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

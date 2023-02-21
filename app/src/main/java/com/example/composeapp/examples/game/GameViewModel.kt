@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.composeapp.ui.examples.game
+package com.example.composeapp.examples.game
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.examples.tutorial
+package com.example.composeapp.examples.tutorial
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column

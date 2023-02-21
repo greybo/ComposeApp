@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.examples
+package com.example.composeapp.examples
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.material3.Text
