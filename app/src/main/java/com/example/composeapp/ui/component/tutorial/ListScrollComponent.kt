@@ -1,8 +1,10 @@
 package com.example.composeapp.ui.component.tutorial
 
-import androidx.compose.foundation.*
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
@@ -16,7 +18,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun ScrollCounter() {
+fun ListScrollComponent() {
 
     val counterState = remember { mutableStateOf(0) }
     val namesList = remember { mutableStateOf(listOf("Android", "there")) }
@@ -65,5 +67,5 @@ fun Counter(count: Int, updateCount: (Int) -> Unit) {
 @Preview()
 @Composable
 fun PreviewMyScreenContent() {
-    ScrollCounter()
+    ListScrollComponent()
 }

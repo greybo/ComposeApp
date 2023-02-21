@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.component
+package com.example.composeapp.ui.component.counter
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.Button

@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeapp.ui.component.ToolbarApp
-import com.example.composeapp.ui.component.tutorial.ScrollCounter
+import com.example.composeapp.ui.component.tutorial.DecoupledConstraintLayout
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -40,7 +40,9 @@ fun Greeting() {
 //        MyScreenContent()
 //        GameScreen()
 //        ListGreeting()
-        ScrollCounter()
+//        ListScrollComponent()
+//        ConstraintLayoutContent()
+        DecoupledConstraintLayout()
     }
 }
 
