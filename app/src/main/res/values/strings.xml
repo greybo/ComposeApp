@@ -11,4 +11,7 @@
     <string name="exit">exit</string>
     <string name="play_again">play_again</string>
     <string name="wrong_guess">wrong_guess</string>
+    <string name="label_add">label_add</string>
+    <string name="search_count">search_count</string>
+    <string name="label_filters">label_filters</string>
 </resources>
