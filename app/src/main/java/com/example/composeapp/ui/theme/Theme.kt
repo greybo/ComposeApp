@@ -105,7 +105,7 @@ fun MyCostsTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        shapes = JetnewsShapes,
+        shapes = AppShapes,
         typography = JetnewsTypography,
         content = content
     )

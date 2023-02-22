@@ -10,10 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.composeapp.examples.ToolbarApp
-import com.example.composeapp.examples.constraint.SearchResults
-import com.example.composeapp.examples.constraint.filters
-import com.example.composeapp.examples.constraint.snacks
+import com.example.composeapp.examples.ScaffoldComponent
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -36,7 +33,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting() {
     Column {
-        ToolbarApp("Test")
+//        ToolbarApp("Test")
 //        Tutorial1Greeting()
 //        MessageSingle()
 //        MyScreenContent()
@@ -45,7 +42,8 @@ fun Greeting() {
 //        ListScrollComponent()
 //        ConstraintLayoutContent()
 //        DecoupledConstraintLayout()
-        SearchResults(snacks, filters, {})
+//        SearchResults(snacks, filters, {})
+        ScaffoldComponent()
     }
 }
 
