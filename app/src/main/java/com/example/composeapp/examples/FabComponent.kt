@@ -1,5 +1,9 @@
 package com.example.composeapp.examples
 
+//import androidx.compose.material3.FloatingActionButton
+//import androidx.compose.material3.FloatingActionButtonDefaults
+//import androidx.compose.material3.Icon
+//import androidx.compose.material3.Text
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -32,28 +36,34 @@ data class FabCreateModel(
 )
 
 @Composable
-fun FabComponent(content: (FabCreateModel) -> FabCreateModel) {
-    val create = content.invoke(FabCreateModel())
-//    var expanded by remember { mutableStateOf(true) }
+fun FabComponent(
+    icons: Any = Icons.Rounded.Add,
+    text: String? = null,
+    containerColor: Color = Color.Blue,
+    contentColor: Color = Color.White,
+    expanded: Boolean = false,
+    callback: () -> Unit = {}
+) {
+
     FloatingActionButton(
-        onClick = { create.callback() },
-        containerColor = create.containerColor,
+        onClick = { callback() },
+        containerColor = containerColor,
         content = {
             Row {
-                getImagePainter(create.icons)?.let {
+                getImagePainter(icons)?.let {
                     Icon(
                         painter = it,
                         contentDescription = "",
-                        tint = create.contentColor,
-                        modifier = Modifier.padding(16.dp, 8.dp, 8.dp, 8.dp)
+                        tint = contentColor,
+                        modifier = Modifier.padding(16.dp, 8.dp, 16.dp, 8.dp)
                     )
                 }
-                AnimatedVisibility(visible = create.expanding) {
+                AnimatedVisibility(visible = expanded) {
                     Text(
-                        text = create.text ?: "",
-                        color = create.contentColor,
+                        text = text ?: "",
+                        color = contentColor,
                         modifier = Modifier
-                            .padding(8.dp, 8.dp, 16.dp, 8.dp)
+                            .padding(0.dp, 8.dp, 16.dp, 8.dp)
                             .align(Alignment.CenterVertically)
                     )
                 }
