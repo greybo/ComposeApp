@@ -1,4 +1,4 @@
-package com.example.composeapp.examples
+package com.example.composeapp.examples.sheet
 
 import android.annotation.SuppressLint
 import androidx.activity.compose.BackHandler
@@ -24,10 +24,9 @@ fun BottomSheetLayout() {
     )
 
     var isSheetFullScreen by remember { mutableStateOf(false) }
-    val roundedCornerRadius = if (isSheetFullScreen) 0.dp else 12.dp
+    val roundedCornerRadius = 12.dp// if (isSheetFullScreen) 0.dp else 12.dp
     val modifier = if (isSheetFullScreen)
-        Modifier
-            .fillMaxSize()
+        Modifier.fillMaxSize()
     else
         Modifier.fillMaxWidth()
 
