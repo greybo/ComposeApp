@@ -1,4 +1,4 @@
-package com.example.composeapp.examples
+package com.example.composeapp.examples.elements
 
 //import androidx.compose.material3.FloatingActionButton
 //import androidx.compose.material3.FloatingActionButtonDefaults
