@@ -92,7 +92,7 @@ fun SwipeToDismissComponent() {
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color.White),
+                            .background(Color.Yellow),
                         horizontalArrangement = Arrangement.Center
                     ) {
                         Text(
