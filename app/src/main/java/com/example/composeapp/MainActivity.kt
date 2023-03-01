@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeapp.examples.SwipeToDismissComponent
+import com.example.composeapp.examples.sheet.BackdropScaffoldComponent
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -53,6 +54,8 @@ fun Greeting() {
 //        RailComp()
 //        AnimationComponent()
         SwipeToDismissComponent()
+//        AnimationComponent()
+        BackdropScaffoldComponent()
     }
 }
 
