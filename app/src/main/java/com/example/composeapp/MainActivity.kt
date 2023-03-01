@@ -10,7 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.composeapp.examples.AnimationComponent
+import com.example.composeapp.examples.sheet.BackdropScaffoldComponent
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -49,7 +49,8 @@ fun Greeting() {
 //        AlertDialogComponent()
 //        AlertDialogComponentMain()
 //        RailComp()
-        AnimationComponent()
+//        AnimationComponent()
+        BackdropScaffoldComponent()
     }
 }
 

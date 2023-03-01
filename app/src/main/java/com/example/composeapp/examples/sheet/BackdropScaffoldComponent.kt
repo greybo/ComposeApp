@@ -1,4 +1,4 @@
-package com.example.composeapp.examples
+package com.example.composeapp.examples.sheet
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.LazyColumn
@@ -59,7 +59,7 @@ fun BackdropScaffoldComponent() {
         },
         backLayerContent = {
             LazyColumn {
-                items(if (selection.value >= 3) 3 else 5) {
+                items(if (selection.value >= 3) 3 else 15) {
                     ListItem(
                         Modifier.clickable {
                             selection.value = it
