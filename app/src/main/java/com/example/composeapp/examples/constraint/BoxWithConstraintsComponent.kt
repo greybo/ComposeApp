@@ -1,4 +1,4 @@
-package com.example.composeapp.examples.tutorial
+package com.example.composeapp.examples.constraint
 
 import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,7 +14,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 
-//"androidx.constraintlayout:constraintlayout-compose:1.0.1"
 @Composable
 fun DecoupledConstraintLayout() {
     BoxWithConstraints() {
