@@ -10,7 +10,7 @@ import androidx.compose.ui.unit.sp
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 @Composable
-fun twoText(name: String) {
+fun TwoText(name: String) {
     Column(
         horizontalAlignment = Alignment.End
 //        modifier = Modifier
@@ -39,6 +39,6 @@ fun twoText(name: String) {
 @Composable
 fun DefaultPreview() {
     ComposeAppTheme {
-        twoText("Android")
+        TwoText("Android")
     }
 }

@@ -1,9 +1,5 @@
-package com.example.composeapp.examples.elements
+package com.example.composeapp.examples
 
-//import androidx.compose.material3.FloatingActionButton
-//import androidx.compose.material3.FloatingActionButtonDefaults
-//import androidx.compose.material3.Icon
-//import androidx.compose.material3.Text
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -23,17 +19,9 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
-
-data class FabCreateModel(
-    var icons: Any = Icons.Rounded.Add,
-    var text: String? = null,
-    var containerColor: Color = Color.Blue,
-    var contentColor: Color = Color.White,
-    var expanding: Boolean = true,
-    var callback: () -> Unit = {}
-)
 
 @Composable
 fun FabComponent(
@@ -82,4 +70,10 @@ fun getImagePainter(icons: Any): Painter? {
         is Int -> painterResource(id = icons)
         else -> null
     }
+}
+
+@Preview
+@Composable
+fun PreviewFabComponent() {
+    FabComponent()
 }

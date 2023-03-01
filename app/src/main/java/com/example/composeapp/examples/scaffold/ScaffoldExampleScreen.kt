@@ -8,8 +8,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.composeapp.examples.elements.FabComponent
-import com.example.composeapp.examples.elements.ToolbarAppComponent
+import com.example.composeapp.examples.toolbar.AppBarComponent
 
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -19,7 +18,7 @@ fun ScaffoldComponent() {
     var expandedState by remember { mutableStateOf(true) }
 
     Scaffold(
-        topBar = { ToolbarAppComponent() },
+        topBar = { AppBarComponent() },
         floatingActionButton = {
             FabComponent(text = "Favorite", expanded = expandedState) {
                 expandedState = !expandedState
