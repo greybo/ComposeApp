@@ -16,6 +16,7 @@
 
 package com.example.composeapp.ui.theme
 
+import androidx.compose.material3.ColorScheme
 import androidx.compose.ui.graphics.Color
 
 val md_theme_light_primary = Color(0xFFBF0031)
@@ -77,3 +78,5 @@ val md_theme_dark_surfaceTint = Color(0xFFFFB3B4)
 val Shadow3 = Color(0xff9b86fa)
 val Ocean3 = Color(0xff86f7fa)
 val Shadow5 = Color(0xff4b30ed)
+
+val ColorScheme.interactiveSecondary: List<Color> get() = listOf(Color(0xff4b30ed), Color(0xff86f7fa))

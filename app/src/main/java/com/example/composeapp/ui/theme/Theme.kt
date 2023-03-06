@@ -22,7 +22,6 @@ import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
@@ -107,8 +106,6 @@ fun MyCostsTheme(
         content = content
     )
 }
-
-val ColorScheme.interactiveSecondary: List<Color> get() = listOf(md_theme_light_primary, md_theme_light_primary)
 
 
 //object ComposeAppTheme {
