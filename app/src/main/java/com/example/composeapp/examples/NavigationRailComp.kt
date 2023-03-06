@@ -8,9 +8,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
@@ -47,10 +45,11 @@ fun RailComp() {
             Row {
                 AnimatedVisibility(visible = isShowRail) {
                     NavigationRail(
-                        modifier = Modifier.fillMaxWidth(0.5f),
-                        backgroundColor = Color.White,
+                        modifier = Modifier
+                            .fillMaxWidth(0.5f)
+                            .shadow(elevation = 10.dp),
+                        containerColor = Color.White,
                         contentColor = Color.Black,
-                        elevation = 10.dp,
                         header = { Text(text = "Header") }
                     ) {
                         RailCompItem(Icons.Default.Add, "Content 1") { hideRail() }
@@ -74,9 +73,6 @@ fun RailCompItem(icon: ImageVector, label: String, callback: () -> Unit) {
         enabled = true,
         label = { Text(text = label) },
         alwaysShowLabel = true,
-//    interactionSource: MutableInteractionSource,
-        selectedContentColor = Color.Gray,
-        unselectedContentColor = Color.Red
     )
 }
 

@@ -37,7 +37,7 @@ fun AppBarComponent(
                 }) { Icon(it.icon, contentDescription = "Menu") }
             }
         },
-        colors = TopAppBarDefaults.topAppBarColors(
+        colors = TopAppBarDefaults.mediumTopAppBarColors(
             containerColor = colorsDefault.backgroundColor,
             titleContentColor = colorsDefault.contentColor,
             navigationIconContentColor = homeAction?.color ?: colorsDefault.contentColor,

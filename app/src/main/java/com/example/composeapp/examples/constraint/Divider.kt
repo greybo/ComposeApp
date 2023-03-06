@@ -19,7 +19,8 @@ package com.example.composeapp.examples.constraint
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.size
-import androidx.compose.material.Divider
+import androidx.compose.material3.Divider
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -32,7 +33,7 @@ import com.example.composeapp.ui.theme.ComposeAppTheme
 @Composable
 fun AppDivider(
     modifier: Modifier = Modifier,
-    color: Color = ComposeAppTheme.colors.secondary.copy(alpha = DividerAlpha),
+    color: Color = MaterialTheme.colorScheme.secondary.copy(alpha = DividerAlpha),
     thickness: Dp = 1.dp,
     startIndent: Dp = 0.dp
 ) {
@@ -40,7 +41,7 @@ fun AppDivider(
         modifier = modifier,
         color = color,
         thickness = thickness,
-        startIndent = startIndent
+//        startIndent = startIndent
     )
 }
 

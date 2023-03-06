@@ -19,8 +19,6 @@ package com.example.composeapp.ui.theme
 import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.Colors
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -102,7 +100,6 @@ fun MyCostsTheme(
         } else {
             if (darkTheme) DarkColors else LightColors
         }
-
     MaterialTheme(
         colorScheme = colorScheme,
         shapes = AppShapes,
@@ -111,22 +108,25 @@ fun MyCostsTheme(
     )
 }
 
-object ComposeAppTheme {
-    val colors: Colors
-        @Composable
-        get() = MaterialTheme.colors//LocalJetsnackColors.current
+val ColorScheme.interactiveSecondary: List<Color> get() = listOf(md_theme_light_primary, md_theme_light_primary)
 
-    val Colors.interactiveSecondary get() = listOf(Ocean3, Shadow3)
 
-    val Colors.brand: Color
-        get() = Shadow5
-}
+//object ComposeAppTheme {
+//    val colors: Colors
+//        @Composable
+//        get() = MaterialTheme.colors//LocalJetsnackColors.current
+//
+//    val Colors.interactiveSecondary get() = listOf(Ocean3, Shadow3)
+//
+//    val Colors.brand: Color
+//        get() = Shadow5
+//}
 
 @Composable
 fun ComposeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {

@@ -5,11 +5,11 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.constraintlayout.compose.ChainStyle
 import androidx.constraintlayout.compose.ConstraintLayout
 import com.example.composeapp.R
-import com.example.composeapp.ui.theme.ComposeAppTheme
 
 
 @Composable
@@ -29,10 +28,10 @@ fun SearchResults(
 ) {
     Column {
         FilterBar(filters, onShowFilters = {})
-        androidx.compose.material.Text(
+       Text(
             text = stringResource(R.string.search_count, searchResults.size),
-            style = MaterialTheme.typography.h6,
-            color = ComposeAppTheme.colors.onPrimary,
+            style = MaterialTheme.typography.bodyLarge,
+            color = androidx.compose.material3.MaterialTheme.colorScheme.onPrimary,
             modifier = Modifier.padding(horizontal = 24.dp, vertical = 4.dp)
         )
         LazyColumn {
@@ -83,8 +82,8 @@ private fun SearchResult(
 //        )
         Text(
             text = snack.name,
-            style = MaterialTheme.typography.subtitle1,
-            color = ComposeAppTheme.colors.secondary,
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.secondary,
             modifier = Modifier.constrainAs(name) {
                 linkTo(
                     start = image.end,
@@ -97,8 +96,8 @@ private fun SearchResult(
         )
         Text(
             text = snack.tagline,
-            style = MaterialTheme.typography.body1,
-            color = ComposeAppTheme.colors.primary,
+            style = MaterialTheme.typography.bodyLarge,
+            color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.constrainAs(tag) {
                 linkTo(
                     start = image.end,
@@ -118,8 +117,8 @@ private fun SearchResult(
         )
         Text(
             text = "formatPrice(snack.price)",
-            style = MaterialTheme.typography.subtitle1,
-            color = ComposeAppTheme.colors.primary,
+            style = MaterialTheme.typography.labelMedium,
+            color = MaterialTheme.colorScheme.primary,
             modifier = Modifier.constrainAs(price) {
                 linkTo(
                     start = image.end,

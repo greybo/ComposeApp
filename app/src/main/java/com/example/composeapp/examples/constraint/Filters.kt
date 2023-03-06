@@ -30,6 +30,10 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.List
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
@@ -42,8 +46,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.composeapp.R
 import com.example.composeapp.ui.theme.ComposeAppTheme
-import com.example.composeapp.ui.theme.ComposeAppTheme.brand
-import com.example.composeapp.ui.theme.ComposeAppTheme.interactiveSecondary
+import com.example.composeapp.ui.theme.interactiveSecondary
 
 
 @Composable
@@ -62,10 +65,10 @@ fun FilterBar(
             IconButton(onClick = onShowFilters) {
                 Icon(
                     imageVector = Icons.Rounded.List,
-                    tint = ComposeAppTheme.colors.brand,
+                    tint = MaterialTheme.colorScheme.surfaceTint,
                     contentDescription = stringResource(R.string.label_filters),
                     modifier = Modifier.diagonalGradientBorder(
-                        colors = ComposeAppTheme.colors.interactiveSecondary,
+                        colors = listOf(MaterialTheme.colorScheme.surfaceTint, MaterialTheme.colorScheme.surface),
                         shape = CircleShape
                     )
                 )
@@ -85,15 +88,15 @@ fun FilterChip(
 ) {
     val (selected, setSelected) = filter.enabled
     val backgroundColor by animateColorAsState(
-        if (selected) ComposeAppTheme.colors.secondary else ComposeAppTheme.colors.background
+        if (selected)  MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.background
     )
     val border = Modifier.fadeInDiagonalGradientBorder(
         showBorder = !selected,
-        colors = ComposeAppTheme.colors.interactiveSecondary,
+        colors =  MaterialTheme.colorScheme.interactiveSecondary,
         shape = shape
     )
     val textColor by animateColorAsState(
-        if (selected) Color.Black else ComposeAppTheme.colors.secondary
+        if (selected) Color.Black else  MaterialTheme.colorScheme.secondary
     )
 
     JetsnackSurface(
@@ -109,7 +112,7 @@ fun FilterChip(
         val backgroundPressed =
             if (pressed) {
                 Modifier.offsetGradientBackground(
-                    ComposeAppTheme.colors.interactiveSecondary,
+                    MaterialTheme.colorScheme.interactiveSecondary,
                     200f,
                     0f
                 )
@@ -129,7 +132,7 @@ fun FilterChip(
         ) {
             Text(
                 text = filter.name,
-                style = MaterialTheme.typography.caption,
+                style = MaterialTheme.typography.displayLarge,
                 maxLines = 1,
                 modifier = Modifier.padding(
                     horizontal = 20.dp,
