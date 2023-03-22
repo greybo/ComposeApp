@@ -25,6 +25,7 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.TextStyle
 import androidx.core.view.ViewCompat
 
 private val LightColors = lightColorScheme(
@@ -107,18 +108,19 @@ fun MyCostsTheme(
     )
 }
 
+data class CollapsingTitle(
+    val titleText: String,
+    val expandedTextStyle: TextStyle,
+) {
+    companion object {
+        @Composable
+        fun large(titleText: String) = CollapsingTitle(titleText, MaterialTheme.typography.headlineLarge)
 
-//object ComposeAppTheme {
-//    val colors: Colors
-//        @Composable
-//        get() = MaterialTheme.colors//LocalJetsnackColors.current
-//
-//    val Colors.interactiveSecondary get() = listOf(Ocean3, Shadow3)
-//
-//    val Colors.brand: Color
-//        get() = Shadow5
-//}
+        @Composable
+        fun medium(titleText: String) = CollapsingTitle(titleText, MaterialTheme.typography.headlineMedium)
+    }
 
+}
 @Composable
 fun ComposeAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
