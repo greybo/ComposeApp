@@ -7,20 +7,16 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun AlertDialogComponentMain() {
 
-    val isShowDialog = remember { mutableStateOf(true) }
-
-    if (isShowDialog.value) {
-        AlertDialogComponent(isShowDialog)
-    }
+    val isShowDialog = remember { mutableStateOf(false) }
 
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -29,20 +25,22 @@ fun AlertDialogComponentMain() {
         OutlinedButton(onClick = { isShowDialog.value = true }) {
             Text(text = "Open dialog")
         }
+
+        AlertDialogComponent(isShowDialog.value)
+
     }
 
 }
 
 @Composable
-fun AlertDialogComponent(openDialog: MutableState<Boolean>) {
-
-    if (openDialog.value) {
+fun AlertDialogComponent(isShowDialog: Boolean) {
+    if (isShowDialog.value) {
         AlertDialog(
             onDismissRequest = {
                 // Dismiss the dialog when the user clicks outside the dialog or on the back
                 // button. If you want to disable that functionality, simply use an empty
                 // onCloseRequest.
-                openDialog.value = false
+                isShowDialog.value = false
             },
             title = {
                 Text(text = "Title")
@@ -56,7 +54,7 @@ fun AlertDialogComponent(openDialog: MutableState<Boolean>) {
             confirmButton = {
                 TextButton(
                     onClick = {
-                        openDialog.value = false
+                        isShowDialog.value = false
                     }
                 ) {
                     Text("Confirm")
@@ -65,7 +63,7 @@ fun AlertDialogComponent(openDialog: MutableState<Boolean>) {
             dismissButton = {
                 TextButton(
                     onClick = {
-                        openDialog.value = false
+                        isShowDialog.value = false
                     }
                 ) {
                     Text("Dismiss")
@@ -73,4 +71,10 @@ fun AlertDialogComponent(openDialog: MutableState<Boolean>) {
             }
         )
     }
+}
+
+@Preview
+@Composable
+fun PreviewAlertDialogComponentMain() {
+    AlertDialogComponentMain()
 }
