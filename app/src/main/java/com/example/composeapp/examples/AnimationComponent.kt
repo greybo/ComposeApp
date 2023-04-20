@@ -10,13 +10,14 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
 fun AnimationComponent() {
     var editable by remember { mutableStateOf(false) }
     Box(modifier = Modifier.fillMaxSize()) {
-        OutlinedButton(onClick = { editable = !editable }) {
+        OutlinedButton(onClick = { editable = true }) {
             Text(text = "Button")
         }
         Column(
@@ -38,29 +39,16 @@ fun AnimationComponent() {
                             text = "Exit",
                             modifier = Modifier
                                 .padding(top = 32.dp, start = 16.dp)
-                                .clickable { editable = !editable }
+                                .clickable { editable = false }
                         )
                     }
                 }
             }
         }
-
-//        Row(
-//            modifier = Modifier
-//                .fillMaxWidth(0.5f)
-//                .fillMaxHeight()
-//                .background(Color.Cyan),
-//
-//            ) {
-//            AnimatedVisibility(visible = editable) {
-//                Text(text = "Edit",
-//                    modifier = Modifier
-//                        .fillMaxWidth(0.5f)
-//                        .fillMaxHeight()
-//                        .background(Color.Cyan),)
-//            }
-//        }
     }
 
 
 }
+@Preview
+@Composable
+fun PreviewAnimationComponent() {AnimationComponent()}
