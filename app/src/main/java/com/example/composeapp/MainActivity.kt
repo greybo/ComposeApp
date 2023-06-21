@@ -3,13 +3,15 @@ package com.example.composeapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.composeapp.router.RouterCompose
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -18,14 +20,28 @@ class MainActivity : ComponentActivity() {
         setContent {
             ComposeAppTheme {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
+//                Surface(
+//                    modifier = Modifier.fillMaxSize(),
+//                    color = MaterialTheme.colorScheme.background
+//                ) {
                     Greeting()
-                }
+//                }
             }
         }
+    }
+
+    @Composable
+    private fun Greeting() {
+        ComposeAppTheme(/*isDark = false*/) {
+            Box(modifier = Modifier.fillMaxSize().background(color= MaterialTheme.colorScheme.background)) {
+                RouterCompose()
+            }
+        }
+    }
+    @Preview
+    @Composable
+    fun PreviewRouterCompose() {
+        Greeting()
     }
 }
 
