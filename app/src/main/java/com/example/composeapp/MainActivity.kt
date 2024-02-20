@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.composeapp.ui.component.ToolbarApp
-import com.example.composeapp.ui.component.tutorial.MessageSingle
+import com.example.composeapp.ui.component.tutorial.example1.MessageSingle
 import com.example.composeapp.ui.theme.ComposeAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     Column {
-        ToolbarApp("Test")
+        ToolbarApp(name)
 //        Tutorial1Greeting()
         MessageSingle()
 //    GameScreen()

@@ -1,4 +1,4 @@
-package com.example.composeapp.ui.component.tutorial
+package com.example.composeapp.ui.component.tutorial.example1
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
@@ -18,7 +18,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.composeapp.R
-import com.example.composeapp.ui.component.tutorial.example1.MessageViewModel
 
 
 @Composable
